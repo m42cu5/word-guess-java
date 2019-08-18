@@ -1,1 +1,1 @@
-# guess-the-word.java
+# word-guess.java
