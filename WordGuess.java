@@ -6,7 +6,8 @@ class Main {
     String clue = "";
     for (int i = 0; i < word.length(); i++) {
       clue = clue + "_";
-    };
+    }
+    ;
     char clueArray[] = clue.toCharArray();
     Scanner myScanner = new Scanner(System.in);
     String guess;
@@ -20,27 +21,26 @@ class Main {
         if (guess.length() == 1) {
           index = 0;
           do {
-            index = word.indexOf(guess,index);
+            index = word.indexOf(guess, index);
             if (index != -1) {
               clueArray[index] = guess.charAt(0);
               index++;
             }
-          }
-          while (index != -1);
+          } while (index != -1);
         }
         clue = String.valueOf(clueArray);
         guess = clue;
       }
-    }
-    while (!guess.equals(word));
+    } while (!guess.equals(word));
     myScanner.close();
-    System.out.println("Correct! The word was \"" + word + "\". You guessed the word in " + nbrOfGuesses + " guess(es).");
+    System.out
+        .println("Correct! The word was \"" + word + "\". You guessed the word in " + nbrOfGuesses + " guess(es).");
   }
 }
 
 class RandomWord {
-  String words[] =  {"apple","banana","orange"};
-  double random = Math.random()*(words.length);
+  String words[] = { "apple", "banana", "orange" };
+  double random = Math.random() * (words.length);
   String word = words[(int) random];
 
   public String getWord() {
