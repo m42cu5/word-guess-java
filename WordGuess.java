@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-class Main {
+class WordGuess {
   public static void main(String[] args) {
     String word = new RandomWord().getWord();
     String clue = "";
@@ -8,6 +8,7 @@ class Main {
       clue = clue + "_";
     }
     ;
+    // Store the clue in an array as well for easier manipulation.
     char clueArray[] = clue.toCharArray();
     Scanner myScanner = new Scanner(System.in);
     String guess;
@@ -21,6 +22,10 @@ class Main {
         if (guess.length() == 1) {
           index = 0;
           do {
+            /*
+             * Replace the first occurrence of the guess in the clue, starting from the
+             * current index.
+             */
             index = word.indexOf(guess, index);
             if (index != -1) {
               clueArray[index] = guess.charAt(0);
